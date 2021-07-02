@@ -18,5 +18,11 @@ public class Main {
         );
         System.out.println(t2.getDescription());
 
+
+        Rectangle r1 = new Rectangle(
+                new Point(1, 4),
+                new Point(2, 5)
+        );
+
     }
 }

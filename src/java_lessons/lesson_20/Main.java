@@ -21,8 +21,9 @@ public class Main {
 
         Rectangle r1 = new Rectangle(
                 new Point(1, 4),
-                new Point(2, 5)
+                new Point(2, 6)
         );
+        System.out.println(r1.getDescription());
 
     }
 }

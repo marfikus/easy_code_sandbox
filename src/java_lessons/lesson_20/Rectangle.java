@@ -16,11 +16,16 @@ public class Rectangle {
                 + sideA + " " + sideB);
     }
 
-    public static boolean isValidRectangle(int sideA, int sideB) {
+    private static boolean isValidRectangle(int sideA, int sideB) {
         return sideA > 0 && sideB > 0;
     }
 
-    public boolean isSquare() {
+    public String getDescription() {
+        String isSquare = isSquare() ? "is square" : "it is not square";
+        return "Rectangle with sides: " + sideA + ", " + sideB + "\n" + isSquare;
+    }
+
+    private boolean isSquare() {
         return this.sideA == this.sideB;
     }
 

@@ -1,15 +1,15 @@
 package java_lessons.lesson_20;
 
 public class Triangle {
-    private final int sideA;
-    private final int sideB;
-    private final int sideC;
+    private final float sideA;
+    private final float sideB;
+    private final float sideC;
 
     public Triangle(Point a, Point b, Point c) {
         this(a.getDistanceTo(b), a.getDistanceTo(c), b.getDistanceTo(c));
     }
 
-    private Triangle(int sideA, int sideB, int sideC) {
+    private Triangle(float sideA, float sideB, float sideC) {
         if (isValidTriangle(sideA, sideB, sideC)) {
             this.sideA = sideA;
             this.sideB = sideB;
@@ -18,7 +18,7 @@ public class Triangle {
                 + sideA + " " + sideB + " " + sideC);
     }
 
-    public static boolean isValidTriangle(int sideA, int sideB, int sideC) {
+    public static boolean isValidTriangle(float sideA, float sideB, float sideC) {
         return sideA + sideB > sideC &&
                 sideA + sideC > sideB &&
                 sideB + sideC > sideA;
@@ -28,9 +28,9 @@ public class Triangle {
         return isRightTriangle() ? "right triangle" : "not right triangle";
     }
     private boolean isRightTriangle() {
-        return this.sideA * this.sideA + this.sideB * this.sideB == this.sideC * this.sideC ||
-                this.sideA * this.sideA + this.sideC * this.sideC == this.sideB * this.sideB ||
-                this.sideB * this.sideB + this.sideC * this.sideC == this.sideA * this.sideA;
+        return sideA * sideA + sideB * sideB == sideC * sideC ||
+                sideA * sideA + sideC * sideC == sideB * sideB ||
+                sideB * sideB + sideC * sideC == sideA * sideA;
     }
 
 }

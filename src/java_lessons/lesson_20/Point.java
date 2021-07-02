@@ -10,8 +10,7 @@ public class Point {
         this.y = y;
     }
 
-    public int getDistanceTo(Point other) {
-        // TODO: 23.06.2021 баг: возвращает целое значение, а корень не всегда целый
-        return (int) Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
+    public float getDistanceTo(Point other) {
+        return (float) Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
     }
 }

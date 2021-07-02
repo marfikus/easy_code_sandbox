@@ -22,11 +22,16 @@ public class Rectangle {
 
     public String getDescription() {
         String isSquare = isSquare() ? "is square" : "it is not square";
-        return "Rectangle with sides: " + sideA + ", " + sideB + "\n" + isSquare;
+        return "Rectangle with sides: " + sideA + ", " + sideB + "\n"
+                + isSquare + "\n" + "Area: " + getArea();
     }
 
     private boolean isSquare() {
         return this.sideA == this.sideB;
+    }
+
+    private int getArea() {
+        return sideA * sideB;
     }
 
 }

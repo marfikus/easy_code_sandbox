@@ -8,4 +8,9 @@ public class Option {
         this.description = description;
         this.isChosen = isChosen;
     }
+
+    public Option(Option old, boolean isChosen) {
+        this.description = old.description;
+        this.isChosen = isChosen;
+    }
 }

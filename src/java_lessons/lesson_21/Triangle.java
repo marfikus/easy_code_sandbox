@@ -3,7 +3,7 @@ package java_lessons.lesson_21;
 public class Triangle extends Figure {
 
     public Triangle(double a, double b, double c) {
-        super(new double[] {a, b, c});
+        super("Triangle", new double[] {a, b, c});
     }
 
     @Override

@@ -7,13 +7,18 @@ public class Main {
         Option op1 = new Option("ddd", false);
         op1 = new Option(op1, true);
 
-        Circle circle = new Circle(3);
-        System.out.println(circle.getPerimeter());
+        Figure[] figures = new Figure[3];
+        figures[0] = new Circle(3);
+        figures[1] = new Rectangle(2, 5);
+        figures[2] = new Triangle(3, 4, 5);
 
-        Rectangle rectangle = new Rectangle(2, 5);
-        System.out.println(rectangle.getPerimeter());
+        for (Figure figure: figures) {
+            print("Type: " + figure.type + ", Area: " + figure.getArea()
+                    + ", Perimeter: " + figure.getPerimeter());
+        }
+    }
 
-        Triangle triangle = new Triangle(3, 4, 5);
-        System.out.println(triangle.getPerimeter());
+    private static void print(String text) {
+        System.out.println(text);
     }
 }

@@ -4,6 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Dog dog = new Dog("dd");
+        print(dog.move("south"));
+        print(dog.toString());
 
     }
 

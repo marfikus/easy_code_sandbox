@@ -17,7 +17,12 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public double getArea() {
+    protected double getArea() {
         return sides[0] * sides[1];
+    }
+
+    @Override
+    public String toString() {
+        return "Type: " + getType() + ", Area: " + getArea();
     }
 }

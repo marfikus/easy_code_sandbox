@@ -1,6 +1,6 @@
 package java_lessons.lesson_22.tasks;
 
-public class Dog extends Animal{
+public class Dog extends Animal {
 
     public Dog(String name) {
         super(name);

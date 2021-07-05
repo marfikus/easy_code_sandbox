@@ -7,6 +7,11 @@ public class Rectangle extends Figure {
     }
 
     @Override
+    protected String getType() {
+        return "Rect";
+    }
+
+    @Override
     public double getPerimeter() {
         return 2 * super.getPerimeter();
     }

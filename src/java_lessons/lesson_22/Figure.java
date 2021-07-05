@@ -5,8 +5,13 @@ public abstract class Figure {
     protected final double[] sides;
 
     protected Figure(double[] sides) {
-        this.type = this.getClass().getSimpleName();
+        this.type = getType();
         this.sides = sides;
+    }
+
+    // при необходимости можно переопределить этот метод у потомков
+    protected String getType() {
+        return getClass().getSimpleName();
     }
 
     public double getPerimeter() {

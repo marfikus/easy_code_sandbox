@@ -4,19 +4,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Figure[] figures = new Figure[3];
         FigureFactory factory = new FigureFactory();
 
-        figures[0] = factory.create(new double[] {2});
-        figures[1] = factory.create(new double[] {3, 5});
-        figures[2] = factory.create(new double[] {3, 4, 5});
-
-        for (Figure figure : figures) {
-            print(figure.toString());
-        }
+        print(
+                factory.create(2),
+                factory.create(3, 5),
+                factory.create(3, 4, 5)
+        );
     }
 
     private static void print(String text) {
         System.out.println(text);
+    }
+
+    private static void print(Figure... figures) {
+        for (Figure figure : figures) {
+            print(figure.toString());
+        }
     }
 }

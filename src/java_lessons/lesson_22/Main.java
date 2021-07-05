@@ -10,8 +10,7 @@ public class Main {
         figures[2] = new Triangle(3, 4, 5);
 
         for (Figure figure: figures) {
-            print("Type: " + figure.type + ", Area: " + figure.getArea()
-                    + ", Perimeter: " + figure.getPerimeter());
+            print(figure.toString());
         }
     }
 

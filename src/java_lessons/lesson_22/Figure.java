@@ -14,7 +14,7 @@ public abstract class Figure {
         return getClass().getSimpleName();
     }
 
-    public double getPerimeter() {
+    protected double getPerimeter() {
         double perimeter = 0;
         for (double side: sides) {
             perimeter += side;
@@ -22,5 +22,11 @@ public abstract class Figure {
         return perimeter;
     }
 
-    public abstract double getArea();
+    protected abstract double getArea();
+
+    @Override
+    public String toString() {
+        return "Type: " + getType() + ", Area: " + getArea()
+                + ", Perimeter: " + getPerimeter();
+    }
 }

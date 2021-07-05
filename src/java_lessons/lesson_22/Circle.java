@@ -4,7 +4,7 @@ public class Circle extends Figure {
     private final double pi = 3.14;
 
     public Circle(double radius) {
-        super("Circle", new double[] {radius});
+        super(new double[] {radius});
     }
 
     @Override

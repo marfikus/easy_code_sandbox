@@ -3,7 +3,7 @@ package java_lessons.lesson_22;
 public class Rectangle extends Figure {
 
     public Rectangle(double a, double b) {
-        super("Rectangle", new double[] {a, b});
+        super(new double[] {a, b});
     }
 
     @Override

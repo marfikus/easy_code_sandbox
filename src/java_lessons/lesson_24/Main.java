@@ -1,5 +1,7 @@
 package java_lessons.lesson_24;
 
+import java.util.Locale;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,14 +19,18 @@ public class Main {
     }
 
     private static void showDescription(Figure figure) {
-        if (figure instanceof Circle) {
-            print("this is a circle");
-        } else if (figure instanceof Rectangle) {
-            print("this is a rectangle");
-        } else if (figure instanceof Triangle) {
-            print("this is a triangle");
-        } else {
-            print("undefined figure");
+        switch (figure.getType().toLowerCase()) {
+            case "circle":
+                print("this is a circle");
+                break;
+            case "rectangle":
+                print("this is a rectangle");
+                break;
+            case "triangle":
+                print("this is a triangle");
+                break;
+            default:
+                print("undefined figure");
         }
     }
 

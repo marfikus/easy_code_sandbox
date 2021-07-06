@@ -7,7 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        print(getDaysInMonth("jul"));
+//        print(getDaysInMonth("jul"));
+
+        WorkerFactory factory = new WorkerFactory();
+        Worker[] workers = {
+                factory.create(11000, 2),
+                factory.create(21000, 4),
+                factory.create(101000, 2),
+        };
+
+        for (Worker worker : workers) {
+            print(worker.toString());
+        }
 
     }
 

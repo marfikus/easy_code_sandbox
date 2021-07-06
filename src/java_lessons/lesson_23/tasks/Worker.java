@@ -8,4 +8,11 @@ public abstract class Worker {
         this.salary = salary;
         this.experience = experience;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()
+                + " worker, experience: " + experience
+                + ", salary: " + salary;
+    }
 }

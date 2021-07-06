@@ -4,13 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        print(checkMonth("january"));
-        print(checkMonth("fff"));
+//        print(checkMonth("january"));
+//        print(checkMonth("fff"));
 
-        print(getDaysForMonth("january"));
-        print(getDaysForMonth("ddd"));
+//        print(getDaysForMonth("january"));
+//        print(getDaysForMonth("ddd"));
+
+
 
     }
+
+
 
     private static void print(String text) {
         System.out.println(text);
@@ -23,6 +27,9 @@ public class Main {
     // здесь суть метода просто проверить входное значение,
     // поскольку switch без brake после первого совпадения
     // игнорирует дальнейшие кейсы и меняет значение days
+
+    // Кмк не очень логично, проще тогда уж сделать проверку
+    // на вхождение в enum или что-то подобное...
     private static String checkMonth(String month) {
         String result;
         int days = -1;

@@ -15,18 +15,19 @@ public class Main {
         FigureFactory factory = new FigureFactory();
         Figure figure = factory.create(3, 4);
         showDescription(figure);
+        print(figure.toString());
 
     }
 
     private static void showDescription(Figure figure) {
-        switch (figure.getType().toLowerCase()) {
-            case "circle":
+        switch (figure.getType()) {
+            case CIRCLE:
                 print("this is a circle");
                 break;
-            case "rectangle":
+            case RECTANGLE:
                 print("this is a rectangle");
                 break;
-            case "triangle":
+            case TRIANGLE:
                 print("this is a triangle");
                 break;
             default:

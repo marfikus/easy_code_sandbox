@@ -1,17 +1,16 @@
 package java_lessons.lesson_24;
 
 public abstract class Figure {
-    final String type;
+    private final FigureType type;
     protected final double[] sides;
 
-    protected Figure(double[] sides) {
-        this.type = getType();
+    protected Figure(double[] sides, FigureType type) {
+        this.type = type;
         this.sides = sides;
     }
 
-    // при необходимости можно переопределить этот метод у потомков
-    protected String getType() {
-        return getClass().getSimpleName();
+    public FigureType getType() {
+        return type;
     }
 
     protected double getPerimeter() {

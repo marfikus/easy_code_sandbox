@@ -3,12 +3,7 @@ package java_lessons.lesson_24;
 public class Rectangle extends Figure {
 
     public Rectangle(double a, double b) {
-        super(new double[] {a, b});
-    }
-
-    @Override
-    protected String getType() {
-        return "Rect";
+        super(new double[] {a, b}, FigureType.RECTANGLE);
     }
 
     @Override

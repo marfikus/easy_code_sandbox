@@ -10,11 +10,23 @@ public class Main {
 //        print(getDaysForMonth("january"));
 //        print(getDaysForMonth("ddd"));
 
-
+        FigureFactory factory = new FigureFactory();
+        Figure figure = factory.create(3, 4);
+        showDescription(figure);
 
     }
 
-
+    private static void showDescription(Figure figure) {
+        if (figure instanceof Circle) {
+            print("this is a circle");
+        } else if (figure instanceof Rectangle) {
+            print("this is a rectangle");
+        } else if (figure instanceof Triangle) {
+            print("this is a triangle");
+        } else {
+            print("undefined figure");
+        }
+    }
 
     private static void print(String text) {
         System.out.println(text);

@@ -3,7 +3,7 @@ package java_lessons.lesson_25;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CloudDataSource implements DataSource {
+public class CloudDataSource implements DataSource<MyData> {
 
     @Nullable
     @Override

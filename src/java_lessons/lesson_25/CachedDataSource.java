@@ -3,18 +3,18 @@ package java_lessons.lesson_25;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CachedDataSource implements MutableDataSource {
+public class CachedDataSource<T> implements MutableDataSource<T> {
 
-    private MyData myData;
+    private T myData;
 
     @Nullable
     @Override
-    public MyData getData() {
+    public T getData() {
         return myData;
     }
 
     @Override
-    public void saveData(@NotNull MyData data) {
+    public void saveData(@NotNull T data) {
         myData = data;
     }
 

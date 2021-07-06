@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DataSource repository = new Repository(
+        DataSource<MyData> repository = new Repository<MyData>(
                 new CloudDataSource(),
-                new CachedDataSource()
+                new CachedDataSource<>()
                 );
 
         MyData data = repository.getData();

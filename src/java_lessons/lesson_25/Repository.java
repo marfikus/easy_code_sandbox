@@ -3,21 +3,21 @@ package java_lessons.lesson_25;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class Repository implements DataSource {
+public class Repository<T> implements DataSource<T> {
 
-    private final DataSource cloudDataSource;
-    private final MutableDataSource cachedDataSource;
+    private final DataSource<T> cloudDataSource;
+    private final MutableDataSource<T> cachedDataSource;
 
-    public Repository(DataSource cloudDataSource,
-                      MutableDataSource cachedDataSource) {
+    public Repository(DataSource<T> cloudDataSource,
+                      MutableDataSource<T> cachedDataSource) {
         this.cloudDataSource = cloudDataSource;
         this.cachedDataSource = cachedDataSource;
     }
 
     @Nullable
     @Override
-    public MyData getData() {
-        MyData result = cachedDataSource.getData();
+    public T getData() {
+        T result = cachedDataSource.getData();
         if (result == null) {
             System.out.println("no data in cache!");
             result = cloudDataSource.getData();

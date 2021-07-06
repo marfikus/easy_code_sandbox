@@ -11,6 +11,10 @@ public abstract class Worker {
         this.type = type;
     }
 
+    public WorkerType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return type + " worker, experience: " + experience

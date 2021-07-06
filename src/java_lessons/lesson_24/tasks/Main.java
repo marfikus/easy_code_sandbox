@@ -12,14 +12,21 @@ public class Main {
         WorkerFactory factory = new WorkerFactory();
         Worker[] workers = {
                 factory.create(11000, 2),
+                factory.create(1010, 1),
                 factory.create(21000, 4),
-                factory.create(101000, 2),
+                factory.create(101000, 2)
         };
+        print(workers);
+        print("");
 
+        Worker[] filteredWorkers = WorkersRecruter.juniorFilter(workers);
+        print(filteredWorkers);
+    }
+
+    private static void print(Worker[] workers) {
         for (Worker worker : workers) {
             print(worker.toString());
         }
-
     }
 
     private static void print(String text) {

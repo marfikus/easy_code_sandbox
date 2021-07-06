@@ -5,6 +5,6 @@ public class Senior extends Worker {
     public static final int MIN_EXPERIENCE = 3;
 
     public Senior(int salary, int experience) {
-        super(salary, experience);
+        super(salary, experience, WorkerType.SENIOR);
     }
 }

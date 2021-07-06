@@ -5,6 +5,6 @@ public class Middle extends Worker {
     public static final int MIN_EXPERIENCE = 2;
 
     public Middle(int salary, int experience) {
-        super(salary, experience);
+        super(salary, experience, WorkerType.MIDDLE);
     }
 }

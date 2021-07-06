@@ -3,16 +3,17 @@ package java_lessons.lesson_24.tasks;
 public abstract class Worker {
     private final int salary;
     private final int experience;
+    private final WorkerType type;
 
-    protected Worker(int salary, int experience) {
+    protected Worker(int salary, int experience, WorkerType type) {
         this.salary = salary;
         this.experience = experience;
+        this.type = type;
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()
-                + " worker, experience: " + experience
+        return type + " worker, experience: " + experience
                 + ", salary: " + salary;
     }
 }

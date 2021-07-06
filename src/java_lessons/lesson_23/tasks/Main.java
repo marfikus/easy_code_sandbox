@@ -34,7 +34,7 @@ public class Main {
 //        int calYear = 2021;
         int calYear = Calendar.getInstance().get(Calendar.YEAR); //get current year
         int calDay = 1;
-        int calMonth = switch (month) {
+        int calMonth = switch (month.toLowerCase()) {
             case "jan", "янв" -> Calendar.JANUARY;
             case "feb", "фев" -> Calendar.FEBRUARY;
             case "mar", "мар" -> Calendar.MARCH;

@@ -14,9 +14,8 @@ public class MyData {
     public String toString() {
         return "MyData{" +
                 "id=" + id +
-                ", description=" + description + '\'' +
-                '}';
-        // TODO: 06.07.2021 зачем тут апострофы?
+                ", description='" + description + '\'' +
+                "}";
     }
 
 }

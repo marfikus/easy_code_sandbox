@@ -17,4 +17,8 @@ public abstract class Worker {
 
     public abstract void work();
 
+    public Task getCurrentTask() {
+        return currentTask;
+    }
+
 }

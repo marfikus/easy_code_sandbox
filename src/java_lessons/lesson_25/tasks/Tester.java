@@ -8,6 +8,7 @@ public class Tester extends Worker {
 
     @Override
     public void work() {
-
+        currentTask = new TesterTask(currentTask, true);
+        System.out.println("task solved!");
     }
 }

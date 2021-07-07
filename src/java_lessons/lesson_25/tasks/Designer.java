@@ -8,6 +8,7 @@ public class Designer extends Worker {
 
     @Override
     public void work() {
-
+        currentTask = new DesignerTask(currentTask, true);
+        System.out.println("task solved!");
     }
 }

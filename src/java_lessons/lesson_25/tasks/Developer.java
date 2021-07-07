@@ -8,6 +8,7 @@ public class Developer extends Worker {
 
     @Override
     public void work() {
-
+        currentTask = new DeveloperTask(currentTask, true);
+        System.out.println("task solved!");
     }
 }

@@ -4,14 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DataSource<MyData> repository = new Repository<>(
+        DataSource<MyData> myDataDataSource = new Repository<>(
                 new MyDataCloudDataSource(),
                 new CachedDataSource<>()
         );
 
-        MyData data = repository.getData();
-        data = repository.getData();
+        DataSource<GeoData> geoDataDataSource = new GeoRepository(
+                new GeoDataCloudDataSource(),
+                new CachedDataSource<>()
+        );
+
+        MyData data = myDataDataSource.getData();
         print(data.toString());
+        data = myDataDataSource.getData();
+        print(data.toString());
+
+        GeoData geoData = geoDataDataSource.getData();
+        print(geoData.toString());
+        geoData = geoDataDataSource.getData();
+        print(geoData.toString());
 
     }
 

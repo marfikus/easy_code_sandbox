@@ -4,18 +4,18 @@ public abstract class Task {
 
     private final String title;
     private final String description;
-    private final boolean status;
+    private final boolean isSolved;
 
-    protected Task(String title, String description, boolean status) {
+    protected Task(String title, String description, boolean isSolved) {
         this.title = title;
         this.description = description;
-        this.status = status;
+        this.isSolved = isSolved;
     }
 
-    protected Task(Task oldTask, boolean status) {
+    protected Task(Task oldTask, boolean isSolved) {
         this.title = oldTask.title;
         this.description = oldTask.description;
-        this.status = status;
+        this.isSolved = isSolved;
     }
 
 }

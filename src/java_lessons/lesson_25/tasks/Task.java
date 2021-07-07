@@ -22,4 +22,11 @@ public abstract class Task {
         this.isSolved = isSolved;
     }
 
+    @Override
+    public String toString() {
+        return "Task: " + title + ", description: " +
+                description + ", type: " + type +
+                ", isSolved: " + isSolved;
+    }
+
 }

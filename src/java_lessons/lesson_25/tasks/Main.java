@@ -22,6 +22,16 @@ public class Main {
                         false)
         };
 
+        workers[0].setTask(tasks[0]);
+        print(workers[0].getCurrentTask().toString());
+        workers[0].work();
+        print(workers[0].getCurrentTask().toString());
+
+        workers[1].setTask(tasks[1]);
+        workers[1].work();
+
+        workers[2].setTask(tasks[2]);
+        workers[2].work();
 
     }
 

@@ -8,7 +8,13 @@ public class Designer extends Worker {
 
     @Override
     public void work() {
-        currentTask = new DesignerTask(currentTask, true);
-        System.out.println("task solved!");
+        Task currentTask = getCurrentTask();
+        if (currentTask != null) {
+            currentTask = new DesignerTask(currentTask, true);
+            setTask(currentTask);
+            System.out.println("task solved!");
+        } else {
+            System.out.println("no task!");
+        }
     }
 }

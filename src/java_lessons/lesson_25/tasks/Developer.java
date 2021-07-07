@@ -8,7 +8,13 @@ public class Developer extends Worker {
 
     @Override
     public void work() {
-        currentTask = new DeveloperTask(currentTask, true);
-        System.out.println("task solved!");
+        Task currentTask = getCurrentTask();
+        if (currentTask != null) {
+            currentTask = new DeveloperTask(currentTask, true);
+            setTask(currentTask);
+            System.out.println("task solved!");
+        } else {
+            System.out.println("no task!");
+        }
     }
 }

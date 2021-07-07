@@ -8,7 +8,13 @@ public class Tester extends Worker {
 
     @Override
     public void work() {
-        currentTask = new TesterTask(currentTask, true);
-        System.out.println("task solved!");
+        Task currentTask = getCurrentTask();
+        if (currentTask != null) {
+            currentTask = new TesterTask(currentTask, true);
+            setTask(currentTask);
+            System.out.println("task solved!");
+        } else {
+            System.out.println("no task!");
+        }
     }
 }

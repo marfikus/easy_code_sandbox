@@ -7,11 +7,13 @@ public class Main {
         TaskFactory factory = new TaskFactory();
         CallbackImpl callback = new CallbackImpl(factory);
 
-        EmployeeChain chain = new EmployeeChain(new Designer(callback, "Alice"));
-        EmployeeChain next = new EmployeeChain(new Programmer(callback, "Nick"));
-        EmployeeChain last = new EmployeeChain(new Tester(callback, "Jack"));
-        next.setNextEmployeeChain(last);
-        chain.setNextEmployeeChain(next);
+        EmployeeChain chain = new EmployeeChain(
+                new EmployeeChain(
+                        new Designer(callback, "Alice"),
+                        new Programmer(callback, "Nick")
+                ),
+                new Tester(callback, "Jack")
+        );
 
         while (true)
             if (!chain.doTask(factory.getTask())) {

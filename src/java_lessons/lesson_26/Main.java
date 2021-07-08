@@ -5,12 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         TaskFactory factory = new TaskFactory();
-        TaskProgressCallback callback = new TaskProgressCallback() {
-            @Override
-            public void updateTask(Task task) {
-                factory.updateTask(task);
-            }
-        };
+        CallbackImpl callback = new CallbackImpl(factory);
 
         EmployeeChain chain = new EmployeeChain(new Designer(callback, "Alice"));
         EmployeeChain next = new EmployeeChain(new Programmer(callback, "Nick"));

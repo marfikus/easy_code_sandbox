@@ -15,10 +15,8 @@ public class Main {
                 new Tester(callback, "Jack")
         );
 
-        while (true)
-            if (!chain.doTask(factory.getTask())) {
-                break;
-            }
+        Work work = new Work(factory, chain);
+        work.start();
 
     }
 

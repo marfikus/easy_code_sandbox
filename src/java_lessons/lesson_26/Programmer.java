@@ -20,8 +20,8 @@ public class Programmer extends Employee {
 
     @Override
     protected String getDetails(Task task) {
-        return " with taskId " + task.getId() +
-                " and designLink " + task.getDesignLink() +
+        return "with taskId: " + task.getId() +
+                " and designLink: " + task.getDesignLink() +
                 "\nand testcase " + task.getTestcase();
     }
 

@@ -20,14 +20,14 @@ public class Designer extends Employee {
 
     @Override
     protected String getDetails(Task task) {
-        return " with taskId" + task.getId() + " and description " + task.getDescription();
+        return "with taskId: " + task.getId() + " and description: " + task.getDescription();
     }
 
     private String getDesignLinkForTask(int taskId) {
-        return "https://project/design_link_for_task_with_id " + taskId;
+        return "https://project/design_link_for_task_with_id_" + taskId;
     }
 
     private String getTestCaseForTask(String taskDescription) {
-        return "when " + taskDescription + " get result " + Math.random();
+        return "when " + taskDescription + " get result: " + Math.random();
     }
 }

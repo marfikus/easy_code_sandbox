@@ -20,6 +20,6 @@ public class Tester extends Employee {
 
     @Override
     protected String getDetails(Task task) {
-        return "with id " + task.getId() + " and testcase " + task.getTestcase();
+        return "with id: " + task.getId() + " and testcase " + task.getTestcase();
     }
 }

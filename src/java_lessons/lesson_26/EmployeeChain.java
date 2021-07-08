@@ -9,14 +9,19 @@ public class EmployeeChain {
         this.employee = employee;
     }
 
-    public void doTask(Task task) {
+    public boolean doTask(Task task) {
+        boolean result;
+
         if (task.getStatus() == employee.getTaskStatus()) {
             employee.doTask(task);
+            result = true;
         } else if (nextEmployeeChain != null) {
-            nextEmployeeChain.doTask(task);
+            result = nextEmployeeChain.doTask(task);
         } else {
-            throw new IllegalArgumentException("task can't be handled!");
+            result = false;
         }
+
+        return result;
     }
 
     public void setNextEmployeeChain(EmployeeChain nextEmployeeChain) {

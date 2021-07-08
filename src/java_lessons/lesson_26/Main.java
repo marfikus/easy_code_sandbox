@@ -14,7 +14,9 @@ public class Main {
         chain.setNextEmployeeChain(next);
 
         while (true)
-            chain.doTask(factory.getTask());
+            if (!chain.doTask(factory.getTask())) {
+                break;
+            }
 
     }
 

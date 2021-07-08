@@ -12,7 +12,7 @@ public class EmployeeChain {
     public boolean doTask(Task task) {
         boolean result;
 
-        if (task.getStatus() == employee.getTaskStatus()) {
+        if (employee.canHandleTask(task)) {
             employee.doTask(task);
             result = true;
         } else if (nextEmployeeChain != null) {

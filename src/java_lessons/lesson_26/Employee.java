@@ -20,6 +20,10 @@ public abstract class Employee {
         callback.updateTask(getTaskWhenDone(task));
     }
 
+    public boolean canHandleTask(Task task) {
+        return taskStatus == task.getStatus();
+    }
+
     public Task.Status getTaskStatus() {
         return taskStatus;
     }

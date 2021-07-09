@@ -1,5 +1,8 @@
 package java_lessons.lesson_28;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,16 +10,13 @@ public class Main {
         TaskFactory factory = new TaskFactory();
         CallbackImpl callback = new CallbackImpl(factory);
 
-        EmployeeChain chain = new EmployeeChain(
-                new EmployeeChain(
-                        new Designer(callback, "Alice"),
-                        new Programmer(callback, "Nick")
-                ),
-                new Tester(callback, "Jack")
-        );
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Designer(callback, "Alice"));
+        employees.add(new Programmer(callback, "Nick"));
+        employees.add(new Tester(callback, "Jack"));
 
-        Work work = new Work(factory, chain);
-        work.start();
+        factory.addEmployees(employees);
+        factory.start();
 
     }
 

@@ -16,11 +16,13 @@ public class Column implements Observable {
     }
 
     public void addTask(Task task) {
+//        System.out.println("Column " + status + " addTask " + task.getId());
         tasks.add(task);
         notifyObservers();
     }
 
     public void removeTask(Task task) {
+//        System.out.println("Column " + status + " removeTask " + task.getId());
         tasks.remove(task);
     }
 

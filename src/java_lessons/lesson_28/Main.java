@@ -12,7 +12,16 @@ public class Main {
 
         List<Employee> employees = new ArrayList<>();
         employees.add(new Designer(callback, "Alice"));
+
         employees.add(new Programmer(callback, "Nick"));
+        // simulating a developer pause
+/*        employees.add(new Programmer(new TaskProgressCallback() {
+            @Override
+            public void updateTask(Task oldTask, Task newTask) {
+                print("Programmer update task");
+            }
+        }, "Nick"));*/
+
         employees.add(new Tester(callback, "Jack"));
 
         factory.addEmployees(employees);

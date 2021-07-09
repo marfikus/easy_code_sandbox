@@ -1,7 +1,5 @@
 package java_lessons.lesson_28;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,23 +31,6 @@ public class TaskFactory {
                 }
             }
         }
-    }
-
-    @NotNull
-    public Task getTask() {
-        Task result = null;
-        for (Task task : tasks) {
-            if (task.getStatus() != Task.Status.DONE) {
-                result = task;
-                break;
-            }
-        }
-
-        if (result == null) {
-            result = tasks[0];
-        }
-
-        return result;
     }
 
     public void updateTask(Task oldTask, Task newTask) {

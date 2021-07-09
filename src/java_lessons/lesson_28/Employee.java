@@ -1,6 +1,6 @@
 package java_lessons.lesson_28;
 
-public abstract class Employee implements TaskHandler {
+public abstract class Employee implements Observer {
 
     private final TaskProgressCallback callback;
     private final String name;
@@ -14,14 +14,15 @@ public abstract class Employee implements TaskHandler {
         this.taskStatus = taskStatus;
     }
 
-    public boolean doTask(Task task) {
-        boolean canHandle = taskStatus == task.getStatus();
-        if (canHandle) {
-            System.out.println(getClass().getSimpleName() + " " + name
-                    + " is doing task " + getDetails(task));
-            callback.updateTask(getTaskWhenDone(task));
-        }
-        return canHandle;
+    @Override
+    public void handleTask(Task task) {
+        System.out.println(getClass().getSimpleName() + " " + name
+                + " is doing task " + getDetails(task));
+        callback.updateTask(getTaskWhenDone(task));
+    }
+
+    public final boolean canBeObserverForColumn(Column column) {
+        return column.contains(taskStatus);
     }
 
     public Task.Status getTaskStatus() {

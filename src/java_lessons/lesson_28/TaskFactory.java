@@ -52,12 +52,20 @@ public class TaskFactory {
         return result;
     }
 
-    public void updateTask(Task task) {
-        for (int i = 0; i < SIZE; i ++) {
-            if (tasks[i].getId() == task.getId()) {
-                tasks[i] = task;
-                break;
+    public void updateTask(Task oldTask, Task newTask) {
+        for (Column column : columns) {
+            if (column.contains(oldTask.getStatus())) {
+                column.removeTask(oldTask);
             }
+            if (column.contains(newTask.getStatus())) {
+                column.addTask(newTask);
+            }
+        }
+    }
+
+    public void start() {
+        for (Task task : tasks) {
+            columns.get(0).addTask(task);
         }
     }
 }

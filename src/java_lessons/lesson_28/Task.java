@@ -48,7 +48,6 @@ public class Task {
     enum Status {
         ASSEMBLING_REQUIREMENT,
         READY_TO_DO,
-        IN_PROGRESS,
         READY_FOR_TESTING,
         DONE
     }

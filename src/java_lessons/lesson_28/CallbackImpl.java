@@ -9,7 +9,7 @@ public class CallbackImpl implements TaskProgressCallback {
     }
 
     @Override
-    public void updateTask(Task task) {
-        taskFactory.updateTask(task);
+    public void updateTask(Task oldTask, Task newTask) {
+        taskFactory.updateTask(oldTask, newTask);
     }
 }

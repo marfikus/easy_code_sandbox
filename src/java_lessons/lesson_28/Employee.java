@@ -18,7 +18,7 @@ public abstract class Employee implements Observer {
     public void handleTask(Task task) {
         System.out.println(getClass().getSimpleName() + " " + name
                 + " is doing task " + getDetails(task));
-        callback.updateTask(getTaskWhenDone(task));
+        callback.updateTask(task, getTaskWhenDone(task));
     }
 
     public final boolean canBeObserverForColumn(Column column) {

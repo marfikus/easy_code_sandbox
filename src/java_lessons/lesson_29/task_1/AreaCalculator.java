@@ -2,12 +2,10 @@ package java_lessons.lesson_29.task_1;
 
 public abstract class AreaCalculator {
 
-    private final Triangle triangle;
-    protected final TriangleType triangleType;
+    protected final TriangleType calculatorType;
 
-    protected AreaCalculator(Triangle triangle) {
-        this.triangle = triangle;
-        this.triangleType = getTriangleType(triangle);
+    protected AreaCalculator(TriangleType calculatorType) {
+        this.calculatorType = calculatorType;
     }
 
     private TriangleType getTriangleType(Triangle triangle) {
@@ -37,6 +35,10 @@ public abstract class AreaCalculator {
         return result;
     }
 
-    public abstract double calcArea();
+    public boolean canCalcArea(Triangle triangle) {
+        return calculatorType == getTriangleType(triangle);
+    }
+
+    public abstract double calcArea(Triangle triangle);
 
 }

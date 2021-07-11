@@ -3,7 +3,7 @@ package java_lessons.lesson_29.task_1;
 public class EquilateralTriangleAreaCalculator extends AreaCalculator{
 
     protected EquilateralTriangleAreaCalculator() {
-        super(TriangleType.EQUILITERAL);
+        super(TriangleType.EQUILATERAL);
     }
 
     @Override

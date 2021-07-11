@@ -11,5 +11,15 @@ public class Triangle {
         this.sideC = sideC;
     }
 
+    public double getSideA() {
+        return sideA;
+    }
 
+    public double getSideB() {
+        return sideB;
+    }
+
+    public double getSideC() {
+        return sideC;
+    }
 }

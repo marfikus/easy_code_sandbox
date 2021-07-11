@@ -15,7 +15,7 @@ public abstract class AreaCalculator {
         double sideC = triangle.getSideC();
 
         if (sideA == sideB && sideA == sideC) {
-            result = TriangleType.EQUILITERAL;
+            result = TriangleType.EQUILATERAL;
 
         } else if ((sideA == sideB && sideA != sideC)
                 || (sideA == sideC && sideA != sideB)

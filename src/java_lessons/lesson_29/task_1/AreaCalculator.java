@@ -1,6 +1,6 @@
 package java_lessons.lesson_29.task_1;
 
-public abstract class AreaCalculator {
+public abstract class AreaCalculator implements AreaCalcHandler {
 
     protected final TriangleType calculatorType;
 
@@ -28,7 +28,7 @@ public abstract class AreaCalculator {
             result = TriangleType.RECTANGULAR;
 
         } else {
-            throw new IllegalArgumentException("Can't determine type on triangle with sides: "
+            throw new IllegalArgumentException("Can't determine type of triangle with sides: "
                     + sideA + " " + sideB + " " + sideC);
         }
 

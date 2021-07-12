@@ -6,13 +6,15 @@ public class Main {
 
         Triangle triangle = new Triangle(3, 4, 5);
 
-        AreaCalculatorChain chain1 = new AreaCalculatorChain(new EquilateralTriangleAreaCalculator());
-        AreaCalculatorChain chain2 = new AreaCalculatorChain(new IsoscelesTriangleAreaCalculator());
-        AreaCalculatorChain chain3 = new AreaCalculatorChain(new RectangularTriangleAreaCalculator());
-        chain2.setNextCalculatorChain(chain3);
-        chain1.setNextCalculatorChain(chain2);
+        AreaCalculatorChain chain = new AreaCalculatorChain(
+                new EquilateralTriangleAreaCalculator(),
+                new AreaCalculatorChain(
+                        new IsoscelesTriangleAreaCalculator(),
+                        new RectangularTriangleAreaCalculator()
+                )
+        );
 
-        print(chain1.calcArea(triangle));
+        print(chain.calcArea(triangle));
 
     }
 

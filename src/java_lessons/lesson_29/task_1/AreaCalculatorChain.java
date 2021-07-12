@@ -1,16 +1,14 @@
 package java_lessons.lesson_29.task_1;
 
-public class AreaCalculatorChain {
+public class AreaCalculatorChain implements AreaCalcHandler {
 
-    private final AreaCalculator calculator;
-    private AreaCalculatorChain nextCalculatorChain = null;
+    private final AreaCalcHandler calculator;
+    private final AreaCalcHandler nextCalculator;
 
-    public AreaCalculatorChain(AreaCalculator calculator) {
+    public AreaCalculatorChain(AreaCalcHandler calculator,
+                               AreaCalcHandler nextCalculator) {
         this.calculator = calculator;
-    }
-
-    public void setNextCalculatorChain(AreaCalculatorChain nextCalculatorChain) {
-        this.nextCalculatorChain = nextCalculatorChain;
+        this.nextCalculator = nextCalculator;
     }
 
     public double calcArea(Triangle triangle) {
@@ -18,12 +16,14 @@ public class AreaCalculatorChain {
 
         if (calculator.canCalcArea(triangle)) {
             result = calculator.calcArea(triangle);
-        } else if (nextCalculatorChain != null) {
-            result = nextCalculatorChain.calcArea(triangle);
         } else {
-            throw new RuntimeException("end of chain!");
+            result = nextCalculator.calcArea(triangle);
         }
 
         return result;
+    }
+
+    public boolean canCalcArea(Triangle triangle) {
+        return false;
     }
 }

@@ -32,6 +32,7 @@ public abstract class AreaCalculator {
                     + sideA + " " + sideB + " " + sideC);
         }
 
+        System.out.println("Type of triangle: " + result);
         return result;
     }
 

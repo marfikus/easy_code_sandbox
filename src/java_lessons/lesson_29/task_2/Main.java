@@ -4,7 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String password = "df843jgr9fj43j3";
 
+        PasswordCheckerChain chain = new PasswordCheckerChain(
+                new PasswordCheckerEmpty(),
+                new PasswordCheckerChain(
+                        new PasswordCheckerMinLength(),
+                        new PasswordCheckerContainsOneDigit()
+                )
+        );
+
+        print(chain.isValid(password));
 
     }
 

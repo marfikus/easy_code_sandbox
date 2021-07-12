@@ -4,6 +4,10 @@ public class PasswordCheckerEmpty extends PasswordChecker {
 
     @Override
     public boolean isValid(String password) {
-        return password.isEmpty();
+        if (!password.isEmpty()) {
+            return true;
+        } else {
+            throw new RuntimeException("Password is empty!");
+        }
     }
 }

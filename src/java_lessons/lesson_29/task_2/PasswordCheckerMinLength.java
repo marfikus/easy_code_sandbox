@@ -6,6 +6,10 @@ public class PasswordCheckerMinLength extends PasswordChecker {
 
     @Override
     public boolean isValid(String password) {
-        return password.length() >= MIN_LENGTH;
+        if (password.length() >= MIN_LENGTH) {
+            return true;
+        } else {
+            throw new RuntimeException("Password is short!");
+        }
     }
 }

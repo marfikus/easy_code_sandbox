@@ -9,9 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        print("Starting at " + new Date());
-        new DownloadFile(URL, FILE_NAME).start(3);
-        print("Finishing at " + new Date());
+//        print("Starting at " + new Date());
+        Thread downloadThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                new DownloadFile(URL, FILE_NAME).start(2);
+            }
+        });
+        downloadThread.start();
+//        print("Finishing at " + new Date());
 
     }
 

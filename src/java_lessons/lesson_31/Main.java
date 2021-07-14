@@ -1,6 +1,7 @@
 package java_lessons.lesson_31;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,7 +11,16 @@ public class Main {
     public static void main(String[] args) {
 
         print("Starting at " + new Date());
-        new DownloadFile(URL, FILE_NAME).start(3);
+
+        UserInputCallback callback = new UserInputCallback() {
+            @Override
+            public String requestToUser() {
+                Scanner scanner = new Scanner(System.in);
+                return scanner.nextLine();
+            }
+        };
+
+        new DownloadFile(URL, FILE_NAME, callback).start(3);
         print("Finishing at " + new Date());
 
     }

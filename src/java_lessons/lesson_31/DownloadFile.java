@@ -9,10 +9,12 @@ public class DownloadFile {
 
     private final String url;
     private final String fileName;
+    private final UserInputCallback callback;
 
-    public DownloadFile(String url, String fileName) {
+    public DownloadFile(String url, String fileName, UserInputCallback callback) {
         this.url = url;
         this.fileName = fileName;
+        this.callback = callback;
     }
 
     public void start(int attempts) {
@@ -28,7 +30,13 @@ public class DownloadFile {
             if (attempts > 1) {
                 start(--attempts);
             } else {
-                System.out.println("Downloading file failed!");
+                System.out.println("Download attempts is over, repeat one more time? y/n");
+                String answer = callback.requestToUser();
+                if (answer.equalsIgnoreCase("y")) {
+                    start(1);
+                } else {
+                    System.out.println("Downloading file failed!");
+                }
             }
         }
     }

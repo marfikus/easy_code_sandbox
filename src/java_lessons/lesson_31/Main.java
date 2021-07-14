@@ -14,7 +14,7 @@ public class Main {
         String url = "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4";
 
         try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());
-             FileOutputStream fileOutputStream = new FileOutputStream("someVideo.mp4")) {
+             FileOutputStream fileOutputStream = new FileOutputStream("downloads/someVideo.mp4")) {
 
             byte[] dataBuffer = new byte[1024];
             int bytesRead;

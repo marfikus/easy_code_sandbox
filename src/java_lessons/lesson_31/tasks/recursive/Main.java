@@ -7,8 +7,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        print(fib(9));
+//        print(fib(9));
 
+        print(sum(10));
+        print(sumRecursive(10));
+
+    }
+
+    private static int sum(int n) {
+        int result = 0;
+        for (int i = 0; i <= n; i++) {
+            result += i;
+        }
+        return result;
+    }
+
+    private static int sumRecursive(int n) {
+        int result = 0;
+        if (n > 0) {
+            result = n + sumRecursive(n - 1);
+        }
+        return result;
     }
 
     private static List<Integer> fib(int n) {

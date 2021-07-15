@@ -7,10 +7,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        print(fib(9));
-
         print(sum(10));
         print(sumRecursive(10));
+
+        print(fib(10));
+        print(fibRecursive(10));
 
     }
 
@@ -43,8 +44,26 @@ public class Main {
                     }
                 }
             }
-        } else {
-            throw new IllegalArgumentException("n must be >= 1");
+        }
+
+        return result;
+    }
+
+    private static List<Integer> fibRecursive(int n) {
+        List<Integer> result = new ArrayList<>();
+
+        if (n == 0 || n == 1) {
+            result.add(0);
+        } else if (n == 2) {
+            result.add(0);
+            result.add(1);
+        } else if (n > 2) {
+            List<Integer> l1 = fibRecursive(n - 1);
+            List<Integer> l2 = fibRecursive(n - 2);
+            result.addAll(l1);
+            int lastOfL1 = l1.get(l1.size() - 1);
+            int lastOfL2 = l2.get(l2.size() - 1);
+            result.add(lastOfL1 + lastOfL2);
         }
 
         return result;

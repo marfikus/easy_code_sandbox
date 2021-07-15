@@ -10,7 +10,7 @@ public class Logger {
         this.list = list;
     }
 
-    public void addLog(String header, String body) {
+    public synchronized void addLog(String header, String body) {
         list.add("--------");
         list.add("Log with header: " + header);
         list.add("Log with body: " + body);

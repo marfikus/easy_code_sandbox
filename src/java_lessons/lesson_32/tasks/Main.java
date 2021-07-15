@@ -13,13 +13,7 @@ public class Main {
 
         List<Thread> threads = new ArrayList<>();
         Timer timer = new Timer();
-        TimerCallback callback = new TimerCallback() {
-            @Override
-            public void stopTimer() {
-                timer.cancel();
-                timer.purge();
-            }
-        };
+        TimerCallbackImpl callback = new TimerCallbackImpl(timer);
         Logger logger = new Logger(new ArrayList<>(), callback);
 
         for (int i = 0; i < 3; i++) {

@@ -1,8 +1,6 @@
 package java_lessons.lesson_32;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -12,18 +10,33 @@ public class Main {
     public static void main(String[] args) {
 
         print("Starting main thread at " + new Date());
+
         List<Thread> threads = new ArrayList<>();
+        Logger logger = new Logger(new ArrayList<>());
 
         for (int i = 0; i < 3; i++) {
-            threads.add(new DownloadFile(URL, "downloads/" + i + "_video.mp4", i));
+//            threads.add(new DownloadFile(URL, "downloads/" + i + "_video.mp4", i));
+
+            int finalI = i;
+            threads.add(new Thread(() ->
+                    logger.addLog("Header " + finalI, "body " + finalI)));
         }
 
         for (Thread thread : threads) {
             thread.start();
         }
 
-        print("Finishing main thread at " + new Date());
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                logger.print();
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(task, 2000);
 
+
+        print("Finishing main thread at " + new Date());
     }
 
     private static void print(Object text) {

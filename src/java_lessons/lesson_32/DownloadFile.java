@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 
-public class DownloadFile implements Runnable {
+public class DownloadFile extends Thread {
 
     private final String url;
     private final String fileName;

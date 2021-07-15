@@ -15,7 +15,7 @@ public class Main {
         List<Thread> threads = new ArrayList<>();
 
         for (int i = 0; i < 3; i++) {
-            threads.add(new Thread(new DownloadFile(URL, "downloads/" + i + "_video.mp4", i)));
+            threads.add(new DownloadFile(URL, "downloads/" + i + "_video.mp4", i));
         }
 
         for (Thread thread : threads) {

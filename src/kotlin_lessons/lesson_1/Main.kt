@@ -6,7 +6,8 @@ object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println(sum(2, 8));
+
+        println(sum(2, 8))
 
         var s = "dd"
         s = "44"
@@ -24,7 +25,7 @@ object Main {
         val l = singletonList("dfd")
         val l2 = singletonList(33)
 
-//        print2("test string", Int.MAX_VALUE / 1000)
+//        printRecursive("test string", Int.MAX_VALUE / 1000)
 
         val list = mutableListOf<String>()
         list.add("ddd")
@@ -35,25 +36,28 @@ object Main {
 
     }
 
-    fun <T> MutableList<T>.addItem(item: T) {
+    // extension функции позволяют добавить функциональности классам
+    private fun <T> MutableList<T>.addItem(item: T) {
         if (notContains(item)) {
             add(item)
         }
     }
 
-    fun <T> MutableList<T>.notContains(item: T): Boolean {
+    private fun <T> MutableList<T>.notContains(item: T): Boolean {
         return !contains(item)
     }
 
-    private tailrec fun print2(str: String, times: Int) {
+    // tailrec позволяет избежать stackoverflow
+    private tailrec fun printRecursive(str: String, times: Int) {
         if (times == 0) {
             println("finishing")
         } else {
             println(str + times)
-            print2(str, times - 1)
+            printRecursive(str, times - 1)
         }
     }
 
+    // `` позволяют использовать ключевые слова языка как имена
     private fun <T> singletonList(`object`: T): List<T> {
         val list = ArrayList<T>(1)
         list.add(`object`)
@@ -86,6 +90,7 @@ object Main {
 class MyObject {
     private val list = ArrayList<String>()
 
+    // infix позволяет также вызывать метод через пробел
     infix fun add(str: String) {
         list.add(str)
     }

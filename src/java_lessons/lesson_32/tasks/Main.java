@@ -21,7 +21,8 @@ public class Main {
 
             int finalI = i;
             threads.add(new Thread(() ->
-                    logger.addLog("Header " + finalI, "body " + finalI)));
+                    logger.addLog("Header " + finalI,
+                            "body " + finalI + " " + Math.random())));
         }
 
         for (Thread thread : threads) {

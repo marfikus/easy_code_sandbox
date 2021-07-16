@@ -7,6 +7,14 @@ public class MainJava {
         log("heading", "body");
         log("heading2");
 
+        print("d", "f", "g");
+
+    }
+
+    public static void print(String... args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
     }
 
     public static void log(String heading, String body) {

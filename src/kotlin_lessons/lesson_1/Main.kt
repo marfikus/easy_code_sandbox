@@ -10,21 +10,32 @@ object Main {
 
         var s = "dd"
         s = "44"
-
         val d = 33
 
-        log("header", "body")
-        log("header2")
+        log("header", "body", "footer")
+        log("header2", footer = "footer2")
+        print("d", "f", "g")
+
 
     }
 
-    fun log(header: String, body: String = "") {
+    private fun print(vararg args: String) {
+        for (string in args) {
+            println(string)
+        }
+    }
+
+    private fun log(header: String, body: String = "", footer: String) {
         if (header.isNotEmpty()) {
             println(header)
         }
 
         if (body.isNotEmpty()) {
             println(body)
+        }
+
+        if (footer.isNotEmpty()) {
+            println(footer)
         }
     }
 

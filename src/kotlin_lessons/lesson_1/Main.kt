@@ -16,6 +16,9 @@ object Main {
         log("header2", footer = "footer2")
         print("d", "f", "g")
 
+        val myObject = MyObject()
+        myObject.add("ddd")
+        myObject add "dsfs"
 
     }
 
@@ -40,4 +43,12 @@ object Main {
     }
 
     private fun sum(a: Int, b: Int) = a + b == 10
+}
+
+class MyObject {
+    private val list = ArrayList<String>()
+
+    infix fun add(str: String) {
+        list.add(str)
+    }
 }

@@ -20,6 +20,16 @@ object Main {
         myObject.add("ddd")
         myObject add "dsfs"
 
+
+        val l = singletonList("dfd")
+        val l2 = singletonList(33)
+
+    }
+
+    private fun <T> singletonList(`object`: T): List<T> {
+        val list = ArrayList<T>(1)
+        list.add(`object`)
+        return list
     }
 
     private fun print(vararg args: String) {

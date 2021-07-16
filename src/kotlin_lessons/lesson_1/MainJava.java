@@ -1,14 +1,25 @@
 package kotlin_lessons.lesson_1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainJava {
 
     public static void main(String[] args) {
 
         log("heading", "body");
         log("heading2");
-
         print("d", "f", "g");
 
+        List<String> l = singletonList("dd");
+        List<Integer> l2 = singletonList(33);
+
+    }
+
+    public static <T> List<T> singletonList(T obj) {
+        List<T> list = new ArrayList<>(1);
+        list.add(obj);
+        return list;
     }
 
     public static void print(String... args) {

@@ -24,8 +24,25 @@ object Main {
         val l = singletonList("dfd")
         val l2 = singletonList(33)
 
-        print2("test string", Int.MAX_VALUE / 1000)
+//        print2("test string", Int.MAX_VALUE / 1000)
 
+        val list = mutableListOf<String>()
+        list.add("ddd")
+        list.add("fff")
+        list.addItem("ddd")
+        list.addItem("hhh")
+        println(list)
+
+    }
+
+    fun <T> MutableList<T>.addItem(item: T) {
+        if (notContains(item)) {
+            add(item)
+        }
+    }
+
+    fun <T> MutableList<T>.notContains(item: T): Boolean {
+        return !contains(item)
     }
 
     private tailrec fun print2(str: String, times: Int) {

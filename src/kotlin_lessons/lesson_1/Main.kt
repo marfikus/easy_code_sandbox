@@ -24,6 +24,17 @@ object Main {
         val l = singletonList("dfd")
         val l2 = singletonList(33)
 
+        print2("test string", Int.MAX_VALUE / 1000)
+
+    }
+
+    private tailrec fun print2(str: String, times: Int) {
+        if (times == 0) {
+            println("finishing")
+        } else {
+            println(str + times)
+            print2(str, times - 1)
+        }
     }
 
     private fun <T> singletonList(`object`: T): List<T> {

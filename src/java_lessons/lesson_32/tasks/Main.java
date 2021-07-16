@@ -14,7 +14,7 @@ public class Main {
         List<Thread> threads = new ArrayList<>();
         Timer timer = new Timer();
         TimerCallbackImpl callback = new TimerCallbackImpl(timer);
-        Logger logger = new Logger(new ArrayList<>(), callback);
+        Logger logger = new Logger(new ArrayList<>(), callback, "downloads/log.txt");
 
         for (int i = 0; i < 3; i++) {
 //            threads.add(new DownloadFile(URL, "downloads/" + i + "_video.mp4", i));

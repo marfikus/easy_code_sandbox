@@ -19,4 +19,14 @@ public class JavaClass {
     public void setI(int i) {
         this.i = i;
     }
+
+    static class NestedClass {
+
+        private final int s;
+
+        public NestedClass(int s) {
+            this.s = s;
+        }
+    }
+
 }

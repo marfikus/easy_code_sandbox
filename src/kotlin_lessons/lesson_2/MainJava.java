@@ -7,7 +7,9 @@ public class MainJava {
 //        JavaSingleton singleton = JavaSingleton.getInstance();
 //        singleton = JavaSingleton.getInstance();
 
-        JavaClass javaClass = new JavaClass();
+//        JavaClass javaClass = new JavaClass();
+
+        JavaClass.NestedClass nestedClass = new JavaClass.NestedClass(4);
 
     }
 }

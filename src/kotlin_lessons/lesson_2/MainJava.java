@@ -4,8 +4,8 @@ public class MainJava {
 
     public static void main(String[] args) {
 
-        Singleton singleton = Singleton.getInstance();
-        singleton = Singleton.getInstance();
+        JavaSingleton singleton = JavaSingleton.getInstance();
+        singleton = JavaSingleton.getInstance();
 
     }
 }

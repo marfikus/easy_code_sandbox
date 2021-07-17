@@ -17,6 +17,8 @@ object Main {
         javaClass.i = 5
         println(javaClass.i)
 
+        val nestedClass = SimpleClass.NestedClass(4)
+
     }
 
 }

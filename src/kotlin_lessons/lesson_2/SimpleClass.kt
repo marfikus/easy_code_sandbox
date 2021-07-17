@@ -14,4 +14,9 @@ class SimpleClass {
     init {
         println("some code...")
     }
+
+    class NestedClass(private val s: Int) {
+
+    }
+
 }

@@ -7,10 +7,26 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        println(max(5, 3))
-        checkNumber(0)
-        convertGrade(5)
+//        println(max(5, 3))
+//        checkNumber(0)
+//        convertGrade(5)
 
+//        var x: Int? = null
+//        check(x)
+
+        val a: Int? = 3
+        println((a as? String)?.length)
+
+    }
+
+    fun check(x: Any?) {
+        when (x) {
+            is String -> print("string")
+            is Int -> print("int")
+            null -> print("null")
+            else -> print("Unknown type")
+        }
+        println()
     }
 
     fun convertGrade(grade: Int) {

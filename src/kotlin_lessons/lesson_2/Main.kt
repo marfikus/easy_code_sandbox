@@ -9,8 +9,13 @@ object Main {
 //        Singleton.incement()
 //        Singleton.print()
 
-        val simpleClass = SimpleClass("ddd")
-        val simpleClass2 = SimpleClass(4)
+//        val simpleClass = SimpleClass("ddd")
+//        val simpleClass2 = SimpleClass(4)
+
+        val javaClass = JavaClass()
+        println(javaClass.i)
+        javaClass.i = 5
+        println(javaClass.i)
 
     }
 

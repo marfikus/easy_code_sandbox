@@ -4,9 +4,7 @@ class SimpleClass {
 
     private val data: Int
 
-    constructor(text: String = "") {
-        data = text.length
-    }
+    constructor(text: String = "") : this(text.length)
 
     constructor(number: Int) {
         data = number

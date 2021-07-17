@@ -1,6 +1,7 @@
 package kotlin_lessons.lesson_3
 
 import java.lang.IllegalArgumentException
+import java.lang.IllegalStateException
 
 object Main {
 
@@ -14,8 +15,20 @@ object Main {
 //        var x: Int? = null
 //        check(x)
 
-        val a: Int? = 3
-        println((a as? String)?.length)
+//        val a: Int? = 3
+//        println((a as? String)?.length)
+
+
+        val repository = object : Repository {
+            override fun getData(): Result {
+                TODO("Not yet implemented")
+            }
+        }
+
+        when (val result = repository.getData()) {
+            is Result.Success -> print(result.data)
+            is Result.Error -> throw IllegalArgumentException(result.message)
+        }
 
     }
 

@@ -8,6 +8,9 @@ object Main {
         Singleton.incement()
         Singleton.incement()
         Singleton.print()
+
+        val simpleClass = SimpleClass()
+
     }
 
 }

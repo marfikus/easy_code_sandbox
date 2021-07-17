@@ -8,5 +8,10 @@ class SimpleClass {
 
     constructor(number: Int) {
         data = number
+        println("constructor called")
+    }
+
+    init {
+        println("some code...")
     }
 }

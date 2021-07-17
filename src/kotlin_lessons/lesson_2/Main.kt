@@ -5,9 +5,9 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        Singleton.incement()
-        Singleton.incement()
-        Singleton.print()
+//        Singleton.incement()
+//        Singleton.incement()
+//        Singleton.print()
 
         val simpleClass = SimpleClass("ddd")
         val simpleClass2 = SimpleClass(4)

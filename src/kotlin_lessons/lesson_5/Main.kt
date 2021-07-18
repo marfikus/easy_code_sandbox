@@ -8,8 +8,10 @@ object Main {
 /*        var str: String = "dffsfgg"
         println(str.getLastIndex())*/
 
-        val list = mutableListOf(MyItemJava(1, "1"))
-        list.addItem(MyItemJava(1, "1"))
+//        val list = mutableListOf(MyItemJava(1, "1"))
+//        list.addItem(MyItemJava(1, "1"))
+        val list = mutableListOf(MyItem(1, "1"))
+        list.addItem(MyItem(1, "1"))
 
 //        val item = MyItemJava(1, "1")
 //        val list = mutableListOf(item)

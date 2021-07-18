@@ -17,7 +17,17 @@ object Main {
 //        val list = mutableListOf(item)
 //        list.addItem(item)
 
-        print(list)
+//        print(list)
+
+        // демонстрация того, что на разных объектах хешкоды могут совпадать
+        // (при большом количестве итераций
+        // в множестве будет меньше элементов, чем задали)
+        val set = HashSet<Int>()
+        val size = 5_000_000
+        for (i in 0 until size) {
+            set.add(MyItem(i, "$i").hashCode())
+        }
+        print(set.size - size)
 
     }
 

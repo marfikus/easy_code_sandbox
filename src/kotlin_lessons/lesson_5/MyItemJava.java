@@ -2,13 +2,13 @@ package kotlin_lessons.lesson_5;
 
 import java.util.Objects;
 
-public class MyItem {
+public class MyItemJava {
 
     private final int i;
     private final String s;
 
 
-    public MyItem(int i, String s) {
+    public MyItemJava(int i, String s) {
         this.i = i;
         this.s = s;
     }
@@ -17,7 +17,7 @@ public class MyItem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MyItem myItem = (MyItem) o;
+        MyItemJava myItem = (MyItemJava) o;
         return i == myItem.i && Objects.equals(s, myItem.s);
     }
 

@@ -18,7 +18,15 @@ public class MainJava {
             }
         }*/
 
-        doSome(20);
+//        doSome(20);
+
+        Object[] array = new Object[] {2, 3, "g", "v", 5};
+        for (Object object : array) {
+//            System.out.println(object);
+            if (object instanceof String) {
+                System.out.println(object);
+            }
+        }
 
     }
 

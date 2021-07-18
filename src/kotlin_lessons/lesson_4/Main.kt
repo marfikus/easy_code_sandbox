@@ -9,7 +9,7 @@ object Main {
             println(i)
         }*/
 
-        val arr = arrayOf("d", "g", "h")
+//        val arr = arrayOf("d", "g", "h")
 
 /*        for (i in arr.indices) {
             println(arr[i])
@@ -36,7 +36,7 @@ object Main {
             }
         }*/
 
-        var x = 0
+/*        var x = 0
         outer@ while (true) {
             println("outer")
             while (true) {
@@ -45,10 +45,32 @@ object Main {
                     break@outer
                 x++
             }
-        }
+        }*/
 
 //        doSome(2)
 //        doSome2(2, arrayOf(1, 5, 3, 2))
+
+//        val array = Array(5) { 0 }
+        val array = Array(5) { it + 1 }
+//        array.forEach { print(it) }
+
+        val arr2 = arrayOf(3, "f", "h", 6)
+/*        arr2.forEach {
+            if (it is String)
+                print(it)
+        }*/
+
+/*        arr2.forEachIndexed { index, data ->
+            println("$index, $data")
+        }*/
+
+        var arr3 = Array(3) { 0 }
+        arr3 = arr3.plus(1)
+        arr3.forEach { print(it) }
+        println()
+        arr3.plus(4).forEach { print(it) }
+        println()
+        arr3.forEach { print(it) }
 
     }
 

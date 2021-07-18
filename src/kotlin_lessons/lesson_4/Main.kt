@@ -23,12 +23,49 @@ object Main {
             println(element)
         }*/
 
-        for ((index, value) in arr.withIndex()) {
+/*        for ((index, value) in arr.withIndex()) {
             println("index: $index, value: $value")
+        }*/
+
+/*        outer@ for (i in 0..2) {
+            for (j in 0..2) {
+                println("$i $j")
+                if (j == 1) {
+                    break@outer
+                }
+            }
+        }*/
+
+        var x = 0
+        outer@ while (true) {
+            println("outer")
+            while (true) {
+                println("inner")
+                if (x == 2)
+                    break@outer
+                x++
+            }
         }
 
+//        doSome(2)
+//        doSome2(2, arrayOf(1, 5, 3, 2))
 
+    }
 
+    fun doSome(max: Int) {
+        for (i in 0..max) {
+            if (i == 3)
+                return
+        }
+        println("done")
+    }
+
+    fun doSome2(max: Int, array: Array<Int>) {
+        array.forEach {
+            if (it == max)
+                return@forEach
+        }
+        println("done")
     }
 
 }

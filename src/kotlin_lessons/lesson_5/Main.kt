@@ -22,12 +22,38 @@ object Main {
         // демонстрация того, что на разных объектах хешкоды могут совпадать
         // (при большом количестве итераций
         // в множестве будет меньше элементов, чем задали)
-        val set = HashSet<Int>()
+        // (но тут надо числа больше 15_000_000)
+/*        val set = HashSet<Int>()
         val size = 5_000_000
         for (i in 0 until size) {
             set.add(MyItem(i, "$i").hashCode())
         }
-        print(set.size - size)
+        println(set.size - size)*/
+
+
+        val map = HashMap<MyItemJava, Int>()
+        val size = 5_000_000
+
+        var hashCodeCalls = 0
+        var equalsCalls = 0
+
+        val callback = object : MyCallback {
+            override fun hashCodeCalled() {
+                hashCodeCalls++
+                if (hashCodeCalls % 100000 == 0)
+                    println("hashCodeCalls: $hashCodeCalls")
+            }
+
+            override fun equalsCalled() {
+                equalsCalls++
+                println("equalsCalls: $equalsCalls")
+            }
+        }
+
+        for (i in 0 until size) {
+            map[MyItemJava(i, "$i", callback)] = i
+        }
+        println("hashCodeCalls: $hashCodeCalls, equalsCalls: $equalsCalls")
 
     }
 

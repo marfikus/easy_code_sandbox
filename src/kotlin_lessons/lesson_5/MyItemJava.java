@@ -6,15 +6,18 @@ public class MyItemJava {
 
     private final int i;
     private final String s;
+    private final MyCallback callback;
 
 
-    public MyItemJava(int i, String s) {
+    public MyItemJava(int i, String s, MyCallback callback) {
         this.i = i;
         this.s = s;
+        this.callback = callback;
     }
 
     @Override
     public boolean equals(Object o) {
+        callback.equalsCalled();
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MyItemJava myItem = (MyItemJava) o;
@@ -23,6 +26,7 @@ public class MyItemJava {
 
     @Override
     public int hashCode() {
+        callback.hashCodeCalled();
         return Objects.hash(i, s);
     }
 

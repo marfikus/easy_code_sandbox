@@ -5,10 +5,48 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        val a = A()
-        a.doAny()
-        a.doAny()
+        // with просто позволяет не дублировать имя обЪекта
+/*        val a = A()
+        with(a) {
+            doAny()
+            doAny()
+            doAny()
+        }*/
 
+        // let позволяет передать ссылку на объект внутрь (it)
+/*        A().let {
+            B().doSomeWithA(it)
+        }*/
+
+
+        // also как и let, но ещё возвращает результат
+/*        val a3 = A().also {
+            it.doAny()
+            B().doSomeWithA(it)
+        }
+        a3.printS("fff")*/
+
+        // или так
+//        val a3 = getA()
+//        a3.printS("rrr")
+
+        // apply как и also, но не передаёт ссылку на объект внутрь
+/*        val a4 = A().apply {
+            doAny()
+        }
+        a4.printS("dd")*/
+
+        // run похож на with, но можно работать с nullable (let тоже так может)
+        val a5: A? = null
+        a5?.run {
+            doAny()
+        }
+
+    }
+
+    fun getA(): A = A().also {
+        it.doAny()
+        B().doSomeWithA(it)
     }
 
     class A {
@@ -27,6 +65,10 @@ object Main {
                 b.doSome()
 //            }
         }
+
+        fun printS(s: String) {
+            println(s)
+        }
     }
 
     class B {
@@ -37,6 +79,10 @@ object Main {
 
         fun doSome() {
             println("call b")
+        }
+
+        fun doSomeWithA(a: A, s: String = "text") {
+            a.printS(s)
         }
     }
 

@@ -13,30 +13,4 @@ object Main {
 
     }
 
-    interface A {
-        fun doOne()
-        fun doTwo()
-    }
-
-    interface B {
-        fun doThree()
-    }
-
-    class AImpl : A {
-        override fun doOne() {
-            println("one")
-        }
-
-        override fun doTwo() {
-            println("two")
-        }
-
-    }
-
-    class BImpl : B {
-        override fun doThree() {
-            println("three")
-        }
-    }
-
 }

@@ -1,9 +1,9 @@
 package kotlin_lessons.lesson_6
 
-class AImpl : A {
+open class AImpl(private val i: Int, override val data: String) : A {
 
     override fun doOne() {
-        println("one")
+        println("oneA $i")
     }
 
     override fun doTwo() {

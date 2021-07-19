@@ -1,8 +1,12 @@
 package kotlin_lessons.lesson_6
 
-class BImpl : B {
+open class BImpl(private val i: Int, override val data: String) : B {
 
-    override fun doThree() {
-        println("three")
+    override fun doOne() {
+        println("oneB $i")
     }
+
+/*    override fun doThree() {
+        println("three")
+    }*/
 }

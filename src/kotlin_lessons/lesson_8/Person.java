@@ -18,7 +18,10 @@ public class Person {
     }
 
     public List<String> getItems() {
-        return items;
+        // так не надо делать, ибо извне можно будет изменить список
+//        return items;
+
+        return new ArrayList<>(items);
     }
 
     @Override

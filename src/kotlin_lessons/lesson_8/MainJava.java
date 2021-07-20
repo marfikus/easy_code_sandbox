@@ -10,10 +10,13 @@ public class MainJava {
         person.addItem("three");
         System.out.println(person);
 
+        // так вот можно изменить список в классе,
+        // если метод будет отдавать нам его, что нехорошо...
         person.getItems().set(0, "new");
         person.getItems().set(1, "new");
         person.getItems().set(2, "new");
         System.out.println(person);
 
+        
     }
 }

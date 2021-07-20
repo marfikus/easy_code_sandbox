@@ -1,5 +1,10 @@
 package kotlin_lessons.lessson_7
 
+import java.io.BufferedInputStream
+import java.io.File
+import java.io.InputStream
+import java.net.URL
+
 object Main {
 
     @JvmStatic
@@ -8,7 +13,6 @@ object Main {
         // with просто позволяет не дублировать имя обЪекта
 /*        val a = A()
         with(a) {
-            doAny()
             doAny()
             doAny()
         }*/
@@ -37,11 +41,24 @@ object Main {
         a4.printS("dd")*/
 
         // run похож на with, но можно работать с nullable (let тоже так может)
-        val a5: A? = null
+/*        val a5: A? = null
         a5?.run {
             doAny()
+        }*/
+
+        // use как аналог try with resources в java
+        // в данном случае не надо самому закрывать стримы
+        val url = "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4"
+        BufferedInputStream(URL(url).openStream()).use {
+            File("downloads/someVideo.mp4").copyInputStreamToFile(it)
         }
 
+    }
+
+    fun File.copyInputStreamToFile(inputStream: InputStream) {
+        this.outputStream().use { fileOut ->
+            inputStream.copyTo(fileOut)
+        }
     }
 
     fun getA(): A = A().also {

@@ -49,9 +49,15 @@ object Main {
         // use как аналог try with resources в java
         // в данном случае не надо самому закрывать стримы
         val url = "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4"
-        BufferedInputStream(URL(url).openStream()).use {
+
+/*        BufferedInputStream(URL(url).openStream()).use {
             File("downloads/someVideo.mp4").copyInputStreamToFile(it)
-        }
+        }*/
+
+        Streams(BufferedInputStream(URL(url).openStream()),
+                File("downloads/someVideo.mp4").outputStream()) { inputStream, outputStream ->
+            inputStream.copyTo(outputStream)
+        }.start()
 
     }
 

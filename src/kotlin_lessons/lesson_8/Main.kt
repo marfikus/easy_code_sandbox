@@ -7,8 +7,13 @@ object Main {
 
         val d = Data()
         d.i = 5
+//        d.show()
+//        println(d.i)
+
+        d.add("1")
+        d.add("2")
         d.show()
-        println(d.i)
+        println(d.copy)
 
     }
 
@@ -21,8 +26,18 @@ object Main {
             }
             get() = field + 1
 
+        private val list = mutableListOf<String>()
+
+        val copy: List<String>
+            get() = mutableListOf<String>().also { it.addAll(list) }
+
+        fun add(x: String) = list.add(x)
+
         fun show() {
-            println(i)
+//            println(i)
+            println(list)
+
+
         }
     }
 

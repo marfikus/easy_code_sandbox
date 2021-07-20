@@ -4,7 +4,7 @@ public class MainJava {
 
     public static void main(String[] args) {
 
-        Person person = new Person();
+        Person person = new Person(3);
         person.addItem("one");
         person.addItem("two");
         person.addItem("three");
@@ -17,6 +17,9 @@ public class MainJava {
         person.getItems().set(2, "new");
         System.out.println(person);
 
-        
+        System.out.println(person.getAge());
+
+
+
     }
 }

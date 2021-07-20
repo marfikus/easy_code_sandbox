@@ -1,4 +1,4 @@
-package kotlin_lessons.lessson_7
+package kotlin_lessons.lesson_7
 
 import java.io.InputStream
 import java.io.OutputStream

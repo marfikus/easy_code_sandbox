@@ -54,12 +54,25 @@ object Main {
             File("downloads/someVideo.mp4").copyInputStreamToFile(it)
         }*/
 
-        Streams(BufferedInputStream(URL(url).openStream()),
+        // с использованием отдельного класса и лямбды
+/*        Streams(BufferedInputStream(URL(url).openStream()),
                 File("downloads/someVideo.mp4").outputStream()) { inputStream, outputStream ->
             inputStream.copyTo(outputStream)
-        }.start()
+        }.start()*/
+
+        val r = someUseLambda(2, 3) { a, b ->
+            a + b
+        }
+//        println(r)
+
+        val lam2: (Int, Int) -> Int = { a, b ->
+            a + b
+        }
+        println(lam2(3, 5))
 
     }
+
+    fun someUseLambda(a: Int, b: Int, lam: (Int, Int) -> Int) = lam.invoke(a, b)
 
     fun File.copyInputStreamToFile(inputStream: InputStream) {
         this.outputStream().use { fileOut ->

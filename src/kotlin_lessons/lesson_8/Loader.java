@@ -3,17 +3,21 @@ package kotlin_lessons.lesson_8;
 public class Loader implements DownloadFile.ProgressCallback {
 
     private final View view;
+    private final String url;
+    private final String fileName;
 
-    public Loader(View view) {
+    public Loader(View view, String url, String fileName) {
         this.view = view;
+        this.url = url;
+        this.fileName = fileName;
     }
 
     public void start() {
         view.setButtonEnabled(false);
         view.showProgress(true);
         DownloadFile downloadFile = new DownloadFile(
-                "https://some.url",
-                "fileName",
+                url,
+                fileName,
                 this
         );
         downloadFile.start();

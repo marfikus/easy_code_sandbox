@@ -20,16 +20,23 @@ object Main {
 
         val list1 = Array(20) { Random.nextInt(-10, 10) }
             .toList()
-        println(list1)
+//        println(list1)
 
         val list2 = list1
             .filter { it > 0 }
             .distinct()
             .sorted()
-        println(list2)
+//        println(list2)
 
         val list3 = list2.map { "number_$it" }
-        println(list3)
+//        println(list3)
+
+
+        val url = "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4"
+        val fileName = "downloads/someVideo.mp4"
+        val view = View("MainView")
+        val loader = Loader(view, url, fileName)
+        loader.start()
 
     }
 
@@ -52,8 +59,6 @@ object Main {
         fun show() {
 //            println(i)
             println(list)
-
-
         }
     }
 

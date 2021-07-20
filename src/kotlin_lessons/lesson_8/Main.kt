@@ -1,5 +1,7 @@
 package kotlin_lessons.lesson_8
 
+import kotlin.random.Random
+
 object Main {
 
     @JvmStatic
@@ -12,8 +14,22 @@ object Main {
 
         d.add("1")
         d.add("2")
-        d.show()
-        println(d.copy)
+//        d.show()
+//        println(d.copy)
+
+
+        val list1 = Array(20) { Random.nextInt(-10, 10) }
+            .toList()
+        println(list1)
+
+        val list2 = list1
+            .filter { it > 0 }
+            .distinct()
+            .sorted()
+        println(list2)
+
+        val list3 = list2.map { "number_$it" }
+        println(list3)
 
     }
 
